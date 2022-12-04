@@ -6,10 +6,16 @@ interface ComponentProps {
   onClick: () => void;
   title: string;
   animate?: boolean;
+  fontSize?: 'MD' | 'SM';
 }
 
 export const Button = (props: ComponentProps) => {
-  const { animate , title, onClick } = props
+  const {
+    animate,
+    title,
+    onClick,
+    fontSize = 'MD'
+  } = props
 
   const container = useRef(null)
 
@@ -23,6 +29,7 @@ export const Button = (props: ComponentProps) => {
   return (
     <Container
       ref={container}
+      fontSize={fontSize}
       show={animate ? isVisible : true}
       onClick={() => onClick()}
     >
