@@ -4,6 +4,7 @@ export const DefaultTheme = {
     NEUTRAL: "#E1E1E6",
     TEXT: '#F2F2FA',
     PRIMARY: '#4EA8DE',
+    PAPER: '#222225',
     
     BUTTON: {
       PRIMARY: '#4EA8DE',
@@ -38,6 +39,7 @@ export const DefaultTheme = {
   },
 
   BORDERRADIUS: {
-    DEFAULT: '8px'
+    DEFAULT: '8px',
+    HALF: '4px'
   }
 }
