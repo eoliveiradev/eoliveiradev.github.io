@@ -15,7 +15,8 @@ export const useTranslation = () => {
 
   const exports = {
     t,
-    setLanguage
+    language,
+    setLanguage,
   }
 
   return exports

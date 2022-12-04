@@ -1,15 +1,17 @@
 import { createContext, ReactNode, useState } from "react";
 import { ITranslation } from "../@types/interfaces";
+import { English } from "../languages/English";
 import { Portuguese } from "../languages/Portuguese";
 
 interface ComponentProps {
   children: ReactNode;
 }
 
-type LanguageType = 'pt-br'
+export type LanguageType = 'pt-br' | 'en'
 
 interface ITranslations {
   'pt-br': ITranslation
+  'en': ITranslation
 }
 
 interface LanguageContextType {
@@ -25,7 +27,8 @@ export const LanguageContextProvider = ({ children }: ComponentProps) => {
   const [language, setLanguage] = useState<LanguageType>('pt-br');
 
   const translations: ITranslations = {
-    'pt-br': Portuguese
+    'pt-br': Portuguese,
+    'en': English
   }
 
   const exports: LanguageContextType = {
