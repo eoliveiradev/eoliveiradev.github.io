@@ -4,17 +4,19 @@ export type AlignType = "flex-start" | "flex-end" | "center" | "space-between" |
 
 interface Props {
   direction: "row" | "column";
-  gap: 'SM' | 'MD' | 'LG' | 'XL';
+  gap: 'SM' | 'MD' | 'LG' | 'XL' | 'DIVIDER';
   align: AlignType;
   justify: AlignType;
   fill: boolean;
+  height: string;
 }
 
 const gapVariants = {
-  SM: '8px',
-  MD: '16px',
-  LG: '24px',
-  XL: '32px',
+  SM: '16px',
+  MD: '14px',
+  LG: '32px',
+  XL: '48px',
+  DIVIDER: '320px'
 }
 
 export const Container = styled.div<Props>`
@@ -24,7 +26,8 @@ export const Container = styled.div<Props>`
     gap,
     align,
     justify,
-    fill
+    fill,
+    height
   }) => css`
 
     display: flex;
@@ -35,6 +38,7 @@ export const Container = styled.div<Props>`
     overflow: hidden;
 
     width: ${fill ? '100%' : 'auto'};
+    min-height: ${height};
 
     justify-content: ${justify};
     align-items: ${align};
