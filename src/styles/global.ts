@@ -9,8 +9,25 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     border: none;
 
+    -webkit-font-smoothing: antialiased;
     font-family: ${({theme}) => theme.FONTS.PRIMARY};
     color: ${({theme}) => theme.COLORS.TEXT};
+
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: ${({ theme }) => theme.COLORS.NEUTRAL};
+
+      transition: 0.2s;
+
+      &:hover {
+        background: #b9b9c6;
+      }
+    }
+
+    scroll-behavior: smooth;
   }
 
   body {
