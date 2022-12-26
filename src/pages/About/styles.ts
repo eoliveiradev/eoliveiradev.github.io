@@ -9,6 +9,10 @@ export const Container = styled.article`
   width: 100%;
 `
 
+export const Section = styled.section`
+
+`
+
 export const TechCard = styled.article`
 
 `
